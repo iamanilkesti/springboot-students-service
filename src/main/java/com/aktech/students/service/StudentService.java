@@ -36,7 +36,7 @@ public class StudentService {
 		try {
 
 			Student student = studentRepository.getReferenceById(studentId);
-			Standard details = restTemplate.getForObject("http://localhost:8088/standards/" + student.getStandard(), Standard.class);
+			Standard details = restTemplate.getForObject("http://STANDARD-SERVICE/standards/" + student.getStandard(), Standard.class);
 			response.setStudent(student);
 			response.setStandard(details);
 		} catch (Exception e){
